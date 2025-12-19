@@ -1,42 +1,43 @@
 export const siteConfig = {
   name: "Placehold",
   url: "https://placehold.harshsandhu.com",
-  description: "A simple, fast, and reliable placeholder image and text generator.",
+  description:
+    "A simple, fast, and reliable placeholder image and text generator.",
   links: {
     twitter: "https://twitter.com/harshsandhu",
-    github: "https://github.com/harshsandhu/placehold",
+    github: "https://github.com/harshsandhu/placehold.harshsandhu.com",
   },
-}
+};
 
 export type NavItem = {
-  title: string
-  href: string
-  disabled?: boolean
-}
+  title: string;
+  href: string;
+  disabled?: boolean;
+};
 
-export type MainNavItem = NavItem
+export type MainNavItem = NavItem;
 
 export type SidebarNavItem = {
-  title: string
-  disabled?: boolean
-  external?: boolean
-  icon?: string
-  label?: string
+  title: string;
+  disabled?: boolean;
+  external?: boolean;
+  icon?: string;
+  label?: string;
 } & (
   | {
-      href: string
-      items?: never
+      href: string;
+      items?: never;
     }
   | {
-      href?: string
-      items: NavItem[]
+      href?: string;
+      items: NavItem[];
     }
-)
+);
 
 export type DocsConfig = {
-  mainNav: MainNavItem[]
-  sidebarNav: SidebarNavItem[]
-}
+  mainNav: MainNavItem[];
+  sidebarNav: SidebarNavItem[];
+};
 
 export const docsConfig: DocsConfig = {
   mainNav: [
@@ -115,4 +116,4 @@ export const docsConfig: DocsConfig = {
       href: "/docs/changelog",
     },
   ],
-}
+};
