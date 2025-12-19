@@ -1,12 +1,10 @@
 import Link from "next/link";
-import { SiteHeader } from "@/components/site-header";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export default function AboutPage() {
   return (
     <div className="relative flex min-h-screen flex-col">
-      <SiteHeader />
       <main className="flex-1">
         <div className="container relative py-6 lg:py-10">
           <section className="mx-auto flex max-w-245 flex-col items-center gap-2 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20">

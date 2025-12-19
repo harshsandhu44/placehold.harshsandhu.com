@@ -14,13 +14,6 @@ export function SiteHeader() {
         <MainNav items={docsConfig.mainNav} />
         <MobileNav />
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-          <div className="w-full flex-1 md:w-auto md:flex-none">
-            <div className="relative w-full text-muted-foreground md:w-64 lg:w-80">
-              <span className="text-sm px-2 hidden lg:inline-block">
-                Search documentation...
-              </span>
-            </div>
-          </div>
           <nav className="flex items-center">
             <Button asChild variant="ghost">
               <Link
