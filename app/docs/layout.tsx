@@ -1,14 +1,8 @@
-"use strict"
+import { docsConfig } from "@/lib/config";
+import { DocsSidebar } from "@/components/docs-sidebar";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
-import { docsConfig } from "@/lib/config"
-import { DocsSidebar } from "@/components/docs-sidebar"
-import { ScrollArea } from "@/components/ui/scroll-area"
-
-interface DocsLayoutProps {
-  children: React.ReactNode
-}
-
-export default function DocsLayout({ children }: DocsLayoutProps) {
+export default function DocsLayout({ children }: LayoutProps<"/docs">) {
   return (
     <div className="border-b">
       <div className="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10">
@@ -20,5 +14,5 @@ export default function DocsLayout({ children }: DocsLayoutProps) {
         {children}
       </div>
     </div>
-  )
+  );
 }

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ChevronRight, ExternalLink } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
 import { siteConfig } from "@/lib/config";
 import { DocsPager } from "@/components/pager";

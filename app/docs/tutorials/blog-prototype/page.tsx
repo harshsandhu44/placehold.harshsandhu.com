@@ -1,7 +1,5 @@
-"use strict"
-
-import { ChevronRight } from "lucide-react"
-import { DocsPager } from "@/components/pager"
+import { ChevronRight } from "lucide-react";
+import { DocsPager } from "@/components/pager";
 
 export default function BlogPrototypeTutorialPage() {
   return (
@@ -12,20 +10,23 @@ export default function BlogPrototypeTutorialPage() {
             Tutorials
           </div>
           <ChevronRight className="h-4 w-4" />
-          <div className="font-medium text-foreground">Build a Blog Prototype</div>
+          <div className="font-medium text-foreground">
+            Build a Blog Prototype
+          </div>
         </div>
         <div className="space-y-2">
           <h1 className="scroll-m-20 text-4xl font-bold tracking-tight">
             Build a Blog Prototype
           </h1>
           <p className="text-lg text-muted-foreground">
-             Create a blog layout with generated content in minutes.
+            Create a blog layout with generated content in minutes.
           </p>
         </div>
 
         <div className="mt-8 space-y-6">
           <p className="leading-7">
-            In this tutorial, we will create a simple blog post layout using Placehold for the featured image and content.
+            In this tutorial, we will create a simple blog post layout using
+            Placehold for the featured image and content.
           </p>
 
           <h2 className="scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight mt-6">
@@ -35,24 +36,24 @@ export default function BlogPrototypeTutorialPage() {
             We start by adding a wide featured image at the top.
           </p>
           <pre className="overflow-x-auto rounded-lg bg-zinc-950 p-4 dark:bg-zinc-900 mt-4">
-              <code className="text-sm text-zinc-50">
-{`<img 
+            <code className="text-sm text-zinc-50">
+              {`<img 
   src="https://placehold.harshsandhu.com/api/img?w=1200&h=400&bg=2d2d2d&fg=666" 
   class="w-full h-auto rounded-lg mb-8" 
   alt="Featured Image" 
 />`}
-              </code>
-            </pre>
-            
+            </code>
+          </pre>
+
           <h2 className="scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight mt-6">
             2. The Content
           </h2>
           <p className="leading-7">
-             For the content, we'll fetch HTML formatted paragraphs.
+            For the content, we&apos;ll fetch HTML formatted paragraphs.
           </p>
-             <pre className="overflow-x-auto rounded-lg bg-zinc-950 p-4 dark:bg-zinc-900 mt-4">
-              <code className="text-sm text-zinc-50">
-{`// Example using React/Next.js
+          <pre className="overflow-x-auto rounded-lg bg-zinc-950 p-4 dark:bg-zinc-900 mt-4">
+            <code className="text-sm text-zinc-50">
+              {`// Example using React/Next.js
 async function BlogContent() {
   const res = await fetch('https://placehold.harshsandhu.com/api/lorem?units=paragraphs&count=5&format=html');
   const html = await res.text();
@@ -61,21 +62,22 @@ async function BlogContent() {
     <div className="prose dark:prose-invert" dangerouslySetInnerHTML={{ __html: html }} />
   );
 }`}
-              </code>
-            </pre>
-            
-            <h2 className="scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight mt-6">
-                3. Putting it together
-            </h2>
-            <p className="leading-7">
-                Combine these elements to flesh out your UI without writing a single dummy word yourself!
-            </p>
+            </code>
+          </pre>
+
+          <h2 className="scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight mt-6">
+            3. Putting it together
+          </h2>
+          <p className="leading-7">
+            Combine these elements to flesh out your UI without writing a single
+            dummy word yourself!
+          </p>
         </div>
-        
+
         <div className="pt-8">
-            <DocsPager slug="/docs/tutorials/blog-prototype" />
+          <DocsPager slug="/docs/tutorials/blog-prototype" />
         </div>
       </div>
     </main>
-  )
+  );
 }

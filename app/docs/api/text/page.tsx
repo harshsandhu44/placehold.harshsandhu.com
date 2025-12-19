@@ -1,7 +1,5 @@
-"use strict"
-
-import { ChevronRight } from "lucide-react"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { ChevronRight } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Table,
   TableBody,
@@ -9,8 +7,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
-import { DocsPager } from "@/components/pager"
+} from "@/components/ui/table";
+import { DocsPager } from "@/components/pager";
 
 export default function TextApiPage() {
   return (
@@ -59,17 +57,26 @@ export default function TextApiPage() {
                   <TableRow>
                     <TableCell className="font-mono">units</TableCell>
                     <TableCell className="font-mono">sentences</TableCell>
-                    <TableCell>Type of text units: <code className="text-xs">words</code>, <code className="text-xs">sentences</code>, or <code className="text-xs">paragraphs</code>.</TableCell>
+                    <TableCell>
+                      Type of text units: <code className="text-xs">words</code>
+                      , <code className="text-xs">sentences</code>, or{" "}
+                      <code className="text-xs">paragraphs</code>.
+                    </TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell className="font-mono">count</TableCell>
                     <TableCell className="font-mono">Random</TableCell>
-                    <TableCell>Number of units to generate (1 to 2000).</TableCell>
+                    <TableCell>
+                      Number of units to generate (1 to 2000).
+                    </TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell className="font-mono">format</TableCell>
                     <TableCell className="font-mono">plain</TableCell>
-                    <TableCell>Output format: <code className="text-xs">plain</code> or <code className="text-xs">html</code>.</TableCell>
+                    <TableCell>
+                      Output format: <code className="text-xs">plain</code> or{" "}
+                      <code className="text-xs">html</code>.
+                    </TableCell>
                   </TableRow>
                 </TableBody>
               </Table>
@@ -105,7 +112,7 @@ export default function TextApiPage() {
           </section>
         </div>
         <div className="pt-8">
-            <DocsPager slug="/docs/api/text" />
+          <DocsPager slug="/docs/api/text" />
         </div>
       </div>
       <div className="hidden text-sm xl:block">
@@ -114,18 +121,33 @@ export default function TextApiPage() {
             <p className="font-medium">On this page</p>
             <ul className="m-0 list-none">
               <li className="mt-0 pt-2">
-                <a href="#endpoint" className="text-muted-foreground hover:text-foreground">Endpoint</a>
+                <a
+                  href="#endpoint"
+                  className="text-muted-foreground hover:text-foreground"
+                >
+                  Endpoint
+                </a>
               </li>
               <li className="mt-0 pt-2">
-                <a href="#parameters" className="text-muted-foreground hover:text-foreground">Parameters</a>
+                <a
+                  href="#parameters"
+                  className="text-muted-foreground hover:text-foreground"
+                >
+                  Parameters
+                </a>
               </li>
               <li className="mt-0 pt-2">
-                <a href="#examples" className="text-muted-foreground hover:text-foreground">Examples</a>
+                <a
+                  href="#examples"
+                  className="text-muted-foreground hover:text-foreground"
+                >
+                  Examples
+                </a>
               </li>
             </ul>
           </div>
         </div>
       </div>
     </main>
-  )
+  );
 }

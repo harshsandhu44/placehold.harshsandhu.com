@@ -1,21 +1,19 @@
-"use strict"
+import Link from "next/link";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import Link from "next/link"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-
-import { docsConfig, NavItem, SidebarNavItem } from "@/lib/config"
-import { cn } from "@/lib/utils"
-import { buttonVariants } from "@/components/ui/button"
+import { docsConfig, NavItem, SidebarNavItem } from "@/lib/config";
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "@/components/ui/button";
 
 interface DocsPagerProps {
-  slug: string
+  slug: string;
 }
 
 export function DocsPager({ slug }: DocsPagerProps) {
-  const pager = getPagerForDoc(slug)
+  const pager = getPagerForDoc(slug);
 
   if (!pager) {
-    return null
+    return null;
   }
 
   return (
@@ -39,28 +37,36 @@ export function DocsPager({ slug }: DocsPagerProps) {
         </Link>
       )}
     </div>
-  )
+  );
 }
 
 export function getPagerForDoc(slug: string) {
-  const flattenedLinks = [null, ...flatten(docsConfig.sidebarNav), null]
-  
+  const flattenedLinks = [null, ...flatten(docsConfig.sidebarNav), null];
+
   const activeIndex = flattenedLinks.findIndex(
-    (link) => link && (link.href === slug || link.href === `/${slug}` || link.href === `/docs/${slug}`)
-  )
-  
-  const prev = activeIndex !== -1 ? flattenedLinks[activeIndex - 1] : null
-  const next = activeIndex !== -1 ? flattenedLinks[activeIndex + 1] : null
+    (link) =>
+      link &&
+      (link.href === slug ||
+        link.href === `/${slug}` ||
+        link.href === `/docs/${slug}`),
+  );
+
+  const prev = activeIndex !== -1 ? flattenedLinks[activeIndex - 1] : null;
+  const next = activeIndex !== -1 ? flattenedLinks[activeIndex + 1] : null;
   return {
     prev,
     next,
-  }
+  };
 }
 
 export function flatten(links: SidebarNavItem[]): NavItem[] {
   return links
     .reduce<NavItem[]>((flat, link) => {
-      return flat.concat(link.items ? flatten(link.items as SidebarNavItem[]) : (link as NavItem))
+      return flat.concat(
+        link.items
+          ? flatten(link.items as SidebarNavItem[])
+          : (link as NavItem),
+      );
     }, [])
-    .filter((link) => !link?.disabled)
+    .filter((link) => !link?.disabled);
 }

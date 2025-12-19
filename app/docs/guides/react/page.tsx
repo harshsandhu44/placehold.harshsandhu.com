@@ -1,5 +1,3 @@
-"use strict";
-
 import { ChevronRight } from "lucide-react";
 import { DocsPager } from "@/components/pager";
 

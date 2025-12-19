@@ -1,7 +1,4 @@
-"use strict"
-
-import { ChevronRight } from "lucide-react"
-import { DocsPager } from "@/components/pager"
+import { DocsPager } from "@/components/pager";
 
 export default function ChangelogPage() {
   return (
@@ -17,27 +14,27 @@ export default function ChangelogPage() {
             Changelog
           </h1>
           <p className="text-lg text-muted-foreground">
-             Latest updates and announcements.
+            Latest updates and announcements.
           </p>
         </div>
 
         <div className="mt-8 space-y-8">
-           <div className="flex flex-col gap-2 border-l-2 pl-6">
-                <h3 className="font-bold">v1.0.0</h3>
-                <time className="text-sm text-muted-foreground">December 2025</time>
-                <ul className="list-disc pl-4 space-y-1">
-                    <li>Initial release</li>
-                    <li>Image generation API</li>
-                    <li>Lorem ipsum text generation API</li>
-                    <li>Documentation website launch</li>
-                </ul>
-           </div>
+          <div className="flex flex-col gap-2 border-l-2 pl-6">
+            <h3 className="font-bold">v1.0.0</h3>
+            <time className="text-sm text-muted-foreground">December 2025</time>
+            <ul className="list-disc pl-4 space-y-1">
+              <li>Initial release</li>
+              <li>Image generation API</li>
+              <li>Lorem ipsum text generation API</li>
+              <li>Documentation website launch</li>
+            </ul>
+          </div>
         </div>
-        
+
         <div className="pt-8">
-            <DocsPager slug="/docs/changelog" />
+          <DocsPager slug="/docs/changelog" />
         </div>
       </div>
     </main>
-  )
+  );
 }
