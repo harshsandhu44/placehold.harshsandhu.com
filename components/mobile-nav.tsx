@@ -1,17 +1,16 @@
-"use strict"
+"use client";
 
-import * as React from "react"
-import Link from "next/link"
-import { Menu } from "lucide-react"
+import * as React from "react";
+import Link from "next/link";
+import { Menu } from "lucide-react";
 
-import { docsConfig, siteConfig } from "@/lib/config"
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { docsConfig, siteConfig } from "@/lib/config";
+import { Button } from "@/components/ui/button";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export function MobileNav() {
-  const [open, setOpen] = React.useState(false)
+  const [open, setOpen] = React.useState(false);
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -45,7 +44,7 @@ export function MobileNav() {
                   >
                     {item.title}
                   </Link>
-                )
+                ),
             )}
           </div>
           <div className="flex flex-col space-y-2">
@@ -75,5 +74,5 @@ export function MobileNav() {
         </ScrollArea>
       </SheetContent>
     </Sheet>
-  )
+  );
 }

@@ -1,15 +1,14 @@
-"use strict"
+"use client";
 
-import * as React from "react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-import { siteConfig } from "@/lib/config"
-import { cn } from "@/lib/utils"
+import { siteConfig } from "@/lib/config";
+import { cn } from "@/lib/utils";
 // import { Icons } from "@/components/icons" // Assuming I might need this later, but for now generic icons or Lucide
 
 export function MainNav({ items }: { items?: any[] }) {
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   return (
     <div className="mr-4 hidden md:flex">
@@ -26,7 +25,7 @@ export function MainNav({ items }: { items?: any[] }) {
             href={item.href}
             className={cn(
               "transition-colors hover:text-foreground/80",
-              pathname === item.href ? "text-foreground" : "text-foreground/60"
+              pathname === item.href ? "text-foreground" : "text-foreground/60",
             )}
           >
             {item.title}
@@ -34,5 +33,5 @@ export function MainNav({ items }: { items?: any[] }) {
         ))}
       </nav>
     </div>
-  )
+  );
 }
