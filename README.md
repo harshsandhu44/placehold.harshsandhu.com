@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Placehold
+
+A simple, fast, and reliable placeholder image and text generator documentation website and API.
+
+## Features
+
+- **Dynamic Image Generation**: Create placeholder images with custom width, height, background, and foreground colors.
+- **Text Generation**: Generate Lorem Ipsum text in various formats (words, sentences, paragraphs) and output types (plain text, HTML).
+- **Documentation**: Comprehensive documentation website built with Next.js and shadcn/ui.
+- **Modern UI**: Clean and responsive design inspired by Syntax.
+- **Edge Ready**: API routes designed to run on the Edge.
+
+## Tech Stack
+
+- [Next.js 16](https://nextjs.org/) - App Router & Server Components
+- [Tailwind CSS](https://tailwindcss.com/) - Styling
+- [shadcn/ui](https://ui.shadcn.com/) - UI Components
+- [Lucide React](https://lucide.dev/) - Icons
+- [Bun](https://bun.sh/) - Package Manager & Runtime
+- [@vercel/og](https://vercel.com/docs/functions/og-image-generation) - Image Generation
 
 ## Getting Started
 
-First, run the development server:
+This project uses [Bun](https://bun.sh) as the package manager.
+
+### Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
+git clone https://github.com/harshsandhu/placehold.git
+cd placehold.harshsandhu.com
+bun install
+```
+
+### Development
+
+Start the development server:
+
+```bash
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Build the application for production:
 
-## Learn More
+```bash
+bun run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `/app` - Next.js App Router pages and API routes.
+  - `/api` - API endpoints (`/img`, `/lorem`).
+  - `/docs` - Documentation pages.
+- `/components` - React components (UI, Navigation, etc.).
+- `/lib` - Utility functions and configuration.
+- `/public` - Static assets.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## API Reference
 
-## Deploy on Vercel
+### Images
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`GET /api/img`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Parameter | Default | Description            |
+| --------- | ------- | ---------------------- |
+| `w`       | 600     | Width (px)             |
+| `h`       | 400     | Height (px)            |
+| `bg`      | #f3f4f6 | Background Color (Hex) |
+| `fg`      | #9ca3af | Text Color (Hex)       |
+
+### Text
+
+`GET /api/lorem`
+
+| Parameter | Default   | Description                  |
+| --------- | --------- | ---------------------------- |
+| `units`   | sentences | words, sentences, paragraphs |
+| `count`   | random    | Number of units              |
+| `format`  | plain     | plain, html                  |
+
+## License
+
+MIT
+
