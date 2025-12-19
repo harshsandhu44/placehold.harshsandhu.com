@@ -4,7 +4,7 @@ export const siteConfig = {
   description:
     "A simple, fast, and reliable placeholder image and text generator.",
   links: {
-    twitter: "https://twitter.com/harshsandhu",
+    twitter: "https://x.com/harshsandhu95",
     github: "https://github.com/harshsandhu44/placehold.harshsandhu.com",
   },
 };
