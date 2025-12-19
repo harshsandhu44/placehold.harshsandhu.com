@@ -1,10 +1,8 @@
-"use strict"
+import Link from "next/link";
+import { ChevronRight, ExternalLink } from "lucide-react";
 
-import Link from "next/link"
-import { ChevronRight, ExternalLink } from "lucide-react"
-
-import { siteConfig } from "@/lib/config"
-import { DocsPager } from "@/components/pager"
+import { siteConfig } from "@/lib/config";
+import { DocsPager } from "@/components/pager";
 
 export default function DocsPage() {
   return (
@@ -22,7 +20,8 @@ export default function DocsPage() {
             Introduction
           </h1>
           <p className="text-lg text-muted-foreground">
-            Welcome to the {siteConfig.name} documentation. {siteConfig.description}
+            Welcome to the {siteConfig.name} documentation.{" "}
+            {siteConfig.description}
           </p>
         </div>
         <div className="pb-12 pt-8">
@@ -35,7 +34,8 @@ export default function DocsPage() {
                 <div className="space-y-2">
                   <h3 className="font-bold">API Reference</h3>
                   <p className="text-sm text-muted-foreground">
-                    Learn how to generate placeholder images and text via our REST API.
+                    Learn how to generate placeholder images and text via our
+                    REST API.
                   </p>
                 </div>
               </div>
@@ -48,7 +48,8 @@ export default function DocsPage() {
                 <div className="space-y-2">
                   <h3 className="font-bold">Guides</h3>
                   <p className="text-sm text-muted-foreground">
-                    Step-by-step guides for integrating {siteConfig.name} into your workflow.
+                    Step-by-step guides for integrating {siteConfig.name} into
+                    your workflow.
                   </p>
                 </div>
               </div>
@@ -75,5 +76,5 @@ export default function DocsPage() {
         </div>
       </div>
     </main>
-  )
+  );
 }

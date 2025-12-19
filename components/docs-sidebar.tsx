@@ -1,17 +1,17 @@
-"use strict"
+"use client";
 
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-import { SidebarNavItem } from "@/lib/config"
-import { cn } from "@/lib/utils"
+import { SidebarNavItem } from "@/lib/config";
+import { cn } from "@/lib/utils";
 
 export interface DocsSidebarProps {
-  items: SidebarNavItem[]
+  items: SidebarNavItem[];
 }
 
 export function DocsSidebar({ items }: DocsSidebarProps) {
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   return (
     <div className="w-full">
@@ -26,12 +26,12 @@ export function DocsSidebar({ items }: DocsSidebarProps) {
         </div>
       ))}
     </div>
-  )
+  );
 }
 
 interface DocsSidebarNavItemsProps {
-  items: SidebarNavItem[]
-  pathname: string | null
+  items: SidebarNavItem[];
+  pathname: string | null;
 }
 
 export function DocsSidebarNavItems({
@@ -50,7 +50,7 @@ export function DocsSidebarNavItems({
               item.disabled && "cursor-not-allowed opacity-60",
               pathname === item.href
                 ? "font-medium text-foreground"
-                : "text-muted-foreground"
+                : "text-muted-foreground",
             )}
             target={item.external ? "_blank" : ""}
             rel={item.external ? "noreferrer" : ""}
@@ -67,7 +67,7 @@ export function DocsSidebarNavItems({
             key={index}
             className={cn(
               "flex w-full cursor-not-allowed items-center rounded-md p-2 text-muted-foreground hover:underline",
-              item.disabled && "cursor-not-allowed opacity-60"
+              item.disabled && "cursor-not-allowed opacity-60",
             )}
           >
             {item.title}
@@ -77,8 +77,8 @@ export function DocsSidebarNavItems({
               </span>
             )}
           </span>
-        )
+        ),
       )}
     </div>
-  )
+  );
 }
