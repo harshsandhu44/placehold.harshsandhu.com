@@ -15,8 +15,16 @@ export async function GET(req: NextRequest) {
   const bg = params.get("bg") ?? "#f3f4f6";
   const fg = params.get("fg") ?? "#9ca3af";
 
+  const bgColor = bg.startsWith("#") ? bg : `#${bg}`;
+  const fgColor = fg.startsWith("#") ? fg : `#${fg}`;
+
   return new ImageResponse(
-    <PlaceholderImage width={width} height={height} bg={bg} fg={fg} />,
+    <PlaceholderImage
+      width={width}
+      height={height}
+      bg={bgColor}
+      fg={fgColor}
+    />,
     {
       width,
       height,
